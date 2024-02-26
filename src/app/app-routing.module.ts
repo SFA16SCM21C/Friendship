@@ -10,9 +10,9 @@ import { ShareComponent } from './share/share.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'message', component: MessageComponent },
   { path: 'compliment', component: ComplimentComponent },
   { path: 'hug', component: HugComponent },
-  { path: 'message', component: MessageComponent },
   { path: 'plan', component: PlanComponent },
   { path: 'share', component: ShareComponent },
 ];
