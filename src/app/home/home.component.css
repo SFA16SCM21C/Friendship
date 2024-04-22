@@ -1,0 +1,18 @@
+.full-screen {
+    height: 100vh;
+}
+.custom-card {
+    flex: 1 1 18rem; /* Adjust this value as needed for spacing between cards */
+    margin: 10px; /* Adjust margin between cards */
+    max-width: calc(100% - 20px); /* Adjust maximum width for responsiveness */
+}
+
+.row {
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.card-width {
+    width: 100px;
+}
