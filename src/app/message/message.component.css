@@ -8,13 +8,24 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh; /* Changed to 100vh for full viewport height */
     padding-bottom: 60px; /* Added padding to accommodate button height */
 }
 
 p {
     margin: 0;
     padding: 20px;
+}
+
+.emoji {
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 10px;
+    display: block;
+}
+
+.selected {
+    background-color: #007bff;
+    color: white;
 }
 
 .footer {

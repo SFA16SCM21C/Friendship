@@ -7,7 +7,40 @@
 </head>
 <body>
     <div class="container">
-        <p>This is the content of the page.</p>
+        <p>This page is dedicated to helping you send heartfelt messages to your loved ones, even when you're not sure what to say. Sometimes, finding the right words can be challenging. If you're struggling to express your feelings or want to send a special message but need some guidance, you've come to the right place. Simply provide us with some hints or instructions about what you'd like to convey, and we'll craft a thoughtful and personalized message for you. Let us help you spread love and joy to those who matter most in your life.</p>
+
+        <div id="emojis">
+            <!-- Vibe: Romantic -->
+            <span id="Romantic" class="emoji" (click)="toggleSelection('Romantic')">Romantic 🌹</span>
+            
+            <!-- Vibe: Tender -->
+            <span id="Tender" class="emoji" (click)="toggleSelection('Tender')">Tender 🥰</span>
+            
+            <!-- Vibe: Heartfelt -->
+            <span id="Heartfelt" class="emoji" (click)="toggleSelection('Heartfelt')">Heartfelt 🙌</span>
+            
+            <!-- Vibe: Nostalgic -->
+            <span id="Nostalgic" class="emoji" (click)="toggleSelection('Nostalgic')">Nostalgic 🎶</span>
+            
+            <!-- Vibe: Playful -->
+            <span id="Playful" class="emoji" (click)="toggleSelection('Playful')">Playful 😜</span>
+            
+            <!-- Vibe: Reassuring -->
+            <span id="Reassuring" class="emoji" (click)="toggleSelection('Reassuring')">Reassuring 🤗</span>
+            
+            <!-- Vibe: Dreamy -->
+            <span id="Dreamy" class="emoji" (click)="toggleSelection('Dreamy')">Dreamy ✨</span>
+            
+            <!-- Vibe: Protective -->
+            <span id="Protective" class="emoji" (click)="toggleSelection('Protective')">Protective 🛡️</span>
+
+            <!-- Vibe: Whimsical -->
+            <span id="Whimsical" class="emoji" (click)="toggleSelection('Whimsical')">Whimsical 🦄</span>
+            
+            <!-- Vibe: Serene -->
+            <span id="Serene" class="emoji" (click)="toggleSelection('Serene')">Serene 🕊️</span>
+        </div>
+        
     </div>
     <div class="footer">
         <button type="button" class="btn btn-primary" routerLink="/home">Go back to Home</button>
