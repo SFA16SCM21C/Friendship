@@ -16,3 +16,37 @@
 .card-width {
     width: 100px;
 }
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64px;
+    height: auto;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64px;
+    height: 64px;
+}
+
+@media (max-width: 576px) {
+    .img-center {
+        width: 50%;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .img-center {
+        width: 70%;
+    }
+}
+
+@media (min-width: 769px) {
+    .img-center {
+        width: 100%;
+    }
+}
