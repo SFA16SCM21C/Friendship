@@ -21,11 +21,13 @@ p {
     cursor: pointer;
     margin: 10px;
     display: block;
+    padding-left: 10px;
 }
 
 .selected {
     background-color: #007bff;
     color: white;
+    border-radius: 5px;
 }
 
 .footer {

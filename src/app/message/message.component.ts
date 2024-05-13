@@ -9,6 +9,7 @@ export class MessageComponent {
 
   toggleSelection(emoji: string) {
     const selected = document.getElementById(emoji);
+    console.log(selected);
     if (selected?.classList.contains("selected")) {
       selected.classList.remove("selected");
     } else if (selected) {
