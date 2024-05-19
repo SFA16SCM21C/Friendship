@@ -45,3 +45,7 @@ p {
     padding: 20px; /* Added padding for better appearance */
     text-align: center;
 }
+
+.generateMessagePadding {
+    padding-top: 20px;
+}

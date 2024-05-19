@@ -49,4 +49,8 @@ export class MessageComponent {
       alert('You can select up to two vibes only.');
     }
   }
+
+  generateMessage () {
+    console.log("generate message clicked");
+  }
 }
