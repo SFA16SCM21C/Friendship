@@ -24,8 +24,14 @@ p {
     padding-left: 10px;
 }
 
-.selected {
-    background-color: #007bff;
+.adjective-selected {
+    background-color: #C8A6DE;
+    color: white;
+    border-radius: 5px;
+}
+
+.vibe-selected {
+    background-color: #BCDEA6;
     color: white;
     border-radius: 5px;
 }

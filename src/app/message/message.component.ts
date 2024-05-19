@@ -7,13 +7,23 @@ import { Component } from '@angular/core';
 })
 export class MessageComponent {
 
-  toggleSelection(emoji: string) {
-    const selected = document.getElementById(emoji);
-    console.log(selected);
-    if (selected?.classList.contains("selected")) {
-      selected.classList.remove("selected");
-    } else if (selected) {
-      selected.classList.add("selected");
+  toggleAdjectiveSelection(adjective: string) {
+    const adjectiveSelected = document.getElementById(adjective);
+
+    if (adjectiveSelected?.classList.contains("adjective-selected")) {
+      adjectiveSelected.classList.remove("adjective-selected");
+    } else if (adjectiveSelected) {
+      adjectiveSelected.classList.add("adjective-selected");
+    }
+  }
+
+  toggleVibeSelection(vibe: string) {
+    const vibeSelected = document.getElementById(vibe);
+    
+    if (vibeSelected?.classList.contains("vibe-selected")) {
+      vibeSelected.classList.remove("vibe-selected");
+    } else if (vibeSelected) {
+      vibeSelected.classList.add("vibe-selected");
     }
   }
 }

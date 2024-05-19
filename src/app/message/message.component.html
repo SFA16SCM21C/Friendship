@@ -7,42 +7,117 @@
 </head>
 <body>
     <div class="container">
-        <p>This page is dedicated to helping you send heartfelt messages to your loved ones, even when you're not sure what to say. Sometimes, finding the right words can be challenging. If you're struggling to express your feelings or want to send a special message but need some guidance, you've come to the right place. Simply provide us with some hints or instructions about what you'd like to convey, and we'll craft a thoughtful and personalized message for you. Let us help you spread love and joy to those who matter most in your life.</p>
-        <p>Select from the following words to craft a message that truly captures your heart's sentiment:</p>
-
-        <div id="emojis">
-            <!-- Vibe: Romantic -->
-            <span id="Romantic" class="emoji" (click)="toggleSelection('Romantic')">Romantic 🌹</span>
-            
-            <!-- Vibe: Tender -->
-            <span id="Tender" class="emoji" (click)="toggleSelection('Tender')">Tender 🥰</span>
-            
-            <!-- Vibe: Heartfelt -->
-            <span id="Heartfelt" class="emoji" (click)="toggleSelection('Heartfelt')">Heartfelt 🙌</span>
-            
-            <!-- Vibe: Nostalgic -->
-            <span id="Nostalgic" class="emoji" (click)="toggleSelection('Nostalgic')">Nostalgic 🎶</span>
-            
-            <!-- Vibe: Playful -->
-            <span id="Playful" class="emoji" (click)="toggleSelection('Playful')">Playful 😜</span>
-            
-            <!-- Vibe: Reassuring -->
-            <span id="Reassuring" class="emoji" (click)="toggleSelection('Reassuring')">Reassuring 🤗</span>
-            
-            <!-- Vibe: Dreamy -->
-            <span id="Dreamy" class="emoji" (click)="toggleSelection('Dreamy')">Dreamy ✨</span>
-            
-            <!-- Vibe: Protective -->
-            <span id="Protective" class="emoji" (click)="toggleSelection('Protective')">Protective 🛡️</span>
-
-            <!-- Vibe: Whimsical -->
-            <span id="Whimsical" class="emoji" (click)="toggleSelection('Whimsical')">Whimsical 🦄</span>
-            
-            <!-- Vibe: Serene -->
-            <span id="Serene" class="emoji" (click)="toggleSelection('Serene')">Serene 🕊️</span>
+        <div class="row">
+            <div class="col">
+                <img width="100" height="100" src="https://img.icons8.com/clouds/100/filled-like.png" alt="filled-like" class="img-fluid float-left"/>
+            </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <p>This page is dedicated to helping you send heartfelt messages to your loved ones, even when you're not sure what to say. Sometimes, finding the right words can be challenging. If you're struggling to express your feelings or want to send a special message but need some guidance, you've come to the right place. Simply provide us with some hints or instructions about what you'd like to convey, and we'll craft a thoughtful and personalized message for you. Let us help you spread love and joy to those who matter most in your life.</p>
+                <p>Select from the following words to craft a message that truly captures your heart's sentiment:</p>
 
-        <!--add the vibe and make a sentence-->
+                <div id="emojis">
+                    <p>Pick a Vibe:</p>
+
+                    <div class="row">
+                        <div class="col">
+                            <!-- Vibe: Romantic -->
+                            <span id="Romantic" class="emoji" (click)="toggleVibeSelection('Romantic')">Romantic 🌹</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Affectionate -->
+                            <span id="Affectionate" class="emoji" (click)="toggleVibeSelection('Affectionate')">Affectionate 🥰</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Heartfelt -->
+                            <span id="Heartfelt" class="emoji" (click)="toggleVibeSelection('Heartfelt')">Heartfelt 🙌</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Nostalgic -->
+                            <span id="Nostalgic" class="emoji" (click)="toggleVibeSelection('Nostalgic')">Nostalgic 🎶</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Playful -->
+                            <span id="Playful" class="emoji" (click)="toggleVibeSelection('Playful')">Playful 😜</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <!-- Vibe: Reassuring -->
+                            <span id="Reassuring" class="emoji" (click)="toggleVibeSelection('Reassuring')">Reassuring 🤗</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Dreamy -->
+                            <span id="Dreamy" class="emoji" (click)="toggleVibeSelection('Dreamy')">Dreamy ✨</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Protective -->
+                            <span id="Protective" class="emoji" (click)="toggleVibeSelection('Protective')">Protective 🛡️</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Whimsical -->
+                            <span id="Whimsical" class="emoji" (click)="toggleVibeSelection('Whimsical')">Whimsical 🦄</span>
+                        </div>
+                        <div class="col">
+                            <!-- Vibe: Serene -->
+                            <span id="Serene" class="emoji" (click)="toggleVibeSelection('Serene')">Serene 🕊️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="emojis">
+                    <p>Pick a Adjective:</p>
+
+                    <div class="row">
+                        <div class="col">
+                            <!-- Adjectives: Admiring -->
+                            <span id="Admiring" class="emoji" (click)="toggleAdjectiveSelection('Admiring')">Admiring 💖</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Cherished -->
+                            <span id="Cherished" class="emoji" (click)="toggleAdjectiveSelection('Cherished')">Cherished 🌹</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Beloved -->
+                            <span id="Beloved" class="emoji" (click)="toggleAdjectiveSelection('Beloved')">Beloved ❤️</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Loving -->
+                            <span id="Loving" class="emoji" (click)="toggleAdjectiveSelection('Loving')">Loving 🥰</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Tender -->
+                            <span id="Tender" class="emoji" (click)="toggleAdjectiveSelection('Tender')">Tender 💕</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <!-- Adjectives: Caring -->
+                            <span id="Caring" class="emoji" (click)="toggleAdjectiveSelection('Caring')">Caring 🌷</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Thankful -->
+                            <span id="Thankful" class="emoji" (click)="toggleAdjectiveSelection('Thankful')">Thankful 🙏</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Appreciative -->
+                            <span id="Appreciative" class="emoji" (click)="toggleAdjectiveSelection('Appreciative')">Appreciative 🌟</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Blessed -->
+                            <span id="Blessed" class="emoji" (click)="toggleAdjectiveSelection('Blessed')">Blessed 🙌</span>
+                        </div>
+                        <div class="col">
+                            <!-- Adjectives: Joyful -->
+                            <span id="Joyful" class="emoji" (click)="toggleAdjectiveSelection('Joyful')">Joyful 📜</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div>
     <div class="footer">
