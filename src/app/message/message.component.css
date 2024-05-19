@@ -17,9 +17,9 @@ p {
 }
 
 .emoji {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    margin: 10px;
+    margin: 5px;
     display: block;
     padding-left: 10px;
 }

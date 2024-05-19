@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class MessageComponent {
 
+  selectedVibesCount: number = 0;
+  selectedAdjectivesCount: number = 0;
+  text: string = 'test';
+
   toggleAdjectiveSelection(adjective: string) {
     const adjectiveSelected = document.getElementById(adjective);
 
