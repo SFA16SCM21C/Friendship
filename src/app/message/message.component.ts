@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-message',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class MessageComponent {
 
-  //vibes related variables
+  // vibes related variables
   selectedVibesCount: number = 0;
   maxVibesAllowed: number = 2;
 
@@ -17,6 +18,12 @@ export class MessageComponent {
 
   // the message generated
   text: string = 'test';
+
+  // selected strings
+  selectedVibes: string[] = [];
+  selectedAdjectives: string[] = [];
+
+  constructor(private http: HttpClient) { }
 
   toggleAdjectiveSelection(adjective: string) {
     const adjectiveSelected = document.getElementById(adjective);
@@ -51,6 +58,36 @@ export class MessageComponent {
   }
 
   generateMessage () {
-    console.log("generate message clicked");
+    if (this.selectedAdjectivesCount == 0 && this.selectedVibesCount == 0) {
+      alert('You have not selected any vibe or adjective');
+    } else {
+      this.createMessage();
+    }
+  }
+
+  createMessage () {
+    const vibesString = this.selectedVibes.join(", ");
+    const adjectivesString = this.selectedAdjectives.join(", ");
+    const prompt = `generate 5 messages to send my lover based on these feelings, I want the message to be ${adjectivesString}, while also sounding ${vibesString}`;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer YOUR_OPENAI_API_KEY`
+    };
+
+    const body = {
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: prompt }],
+      max_tokens: 150
+    };
+
+    this.http.post('https://api.openai.com/v1/chat/completions', body, { headers }).subscribe(
+      (response: any) => {
+        console.log(response.choices[0].message.content);
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
   }
 }
