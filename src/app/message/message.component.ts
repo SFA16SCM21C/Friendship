@@ -20,7 +20,7 @@ export class MessageComponent {
   maxAdjectivesAllowed: number = 2;
 
   // the message generated
-  text: string = 'test';
+  text: string = '';
 
   // selected strings
   selectedVibes: string[] = [];
