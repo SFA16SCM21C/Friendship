@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { OpenAI } from 'openai';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.css']
 })
+
 export class MessageComponent {
 
   // vibes related variables
@@ -31,10 +34,12 @@ export class MessageComponent {
     if (adjectiveSelected?.classList.contains("adjective-selected")) {
       adjectiveSelected.classList.remove("adjective-selected");
       this.selectedAdjectivesCount--;
+      this.selectedAdjectives = this.selectedAdjectives.filter(item => item !== adjective);
     } else if (this.selectedAdjectivesCount < this.maxAdjectivesAllowed) {
       if (adjectiveSelected) {
         adjectiveSelected.classList.add("adjective-selected");
         this.selectedAdjectivesCount++;
+        this.selectedAdjectives.push(adjective);
       }
     } else {
       alert('You can select up to two adjectives only.');
@@ -47,10 +52,12 @@ export class MessageComponent {
     if (vibeSelected?.classList.contains("vibe-selected")) {
       vibeSelected.classList.remove("vibe-selected");
       this.selectedVibesCount--;
+      this.selectedVibes = this.selectedVibes.filter(item => item !== vibe);
     } else if (this.selectedVibesCount < this.maxVibesAllowed) {
       if (vibeSelected) {
         vibeSelected.classList.add("vibe-selected");
         this.selectedVibesCount++;
+        this.selectedVibes.push(vibe);
       }
     } else {
       alert('You can select up to two vibes only.');
@@ -69,25 +76,18 @@ export class MessageComponent {
     const vibesString = this.selectedVibes.join(", ");
     const adjectivesString = this.selectedAdjectives.join(", ");
     const prompt = `generate 5 messages to send my lover based on these feelings, I want the message to be ${adjectivesString}, while also sounding ${vibesString}`;
+    this.text = prompt;
 
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer YOUR_OPENAI_API_KEY`
-    };
+    const openai = new OpenAI({
+      apiKey: environment.openaiApiKey,
+      dangerouslyAllowBrowser: true
+    });
 
-    const body = {
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: prompt }],
-      max_tokens: 150
-    };
+    const chatCompletion = openai.chat.completions.create({
+      messages: [{ role: 'user', content: prompt }],
+      model: 'gpt-3.5-turbo',
+    });
 
-    this.http.post('https://api.openai.com/v1/chat/completions', body, { headers }).subscribe(
-      (response: any) => {
-        console.log(response.choices[0].message.content);
-      },
-      (error) => {
-        console.error('Error:', error);
-      }
-    );
+    console.log(chatCompletion);
   }
 }

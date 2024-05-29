@@ -31,6 +31,17 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "scripts": [
+                {
+                  "input": "./path/to/your/dotenv/load-script.js"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
